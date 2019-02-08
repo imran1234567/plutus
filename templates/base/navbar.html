@@ -8,7 +8,29 @@
 {% url 'account:home' as account_url %}
 {% url 'cart:home' as cart_url %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+{% load static %}
+<header id="header">
+				<div class="inner">
+					<a href="{{ home_url }}"><img src="{% static 'img/Plutus_Loyalty_Logo_Alpha.png'%}" alt="" class="logo"></a>
+					<!--<a href="index.html" class="logo">Plutus</a>-->
+					<nav id="nav">
+						<a href="{{ home_url }}">Home</a>
+						<a href="{{ contact_url }}">Contact</a>
+						<a href="{{ product_list_url }}">Product</a>
+						<a class="nav-link" href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+
+
+
+
+
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
    <div class='container'>
   <a class="navbar-brand" href="{{ home_url }}">
     <img src="//getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -57,7 +79,7 @@
         <a class="nav-link" href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
       </li>
 
-       <!--  <li class="nav-item dropdown">
+       &lt;!&ndash;  <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown link
             </a>
@@ -66,10 +88,10 @@
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </li> -->
+          </li> &ndash;&gt;
 
     </ul>
     {% include 'search/snippets/search-form.html' %}
   </div>
 </div>
-</nav>
+</nav>-->
