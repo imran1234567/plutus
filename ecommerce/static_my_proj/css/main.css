@@ -3944,10 +3944,11 @@
 			font-size: 0.9em;
 			margin: 0 0 2em 0;
 			padding: 0;
+			color: #fff;
 		}
 
 			#footer .copyright a {
-				color: #f2a3a5;
+				color: #fff;
 			}
 
 		@media screen and (max-width: 980px) {
