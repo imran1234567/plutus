@@ -9,21 +9,103 @@
 {% url 'cart:home' as cart_url %}
 
 {% load static %}
-<header id="header">
-				<div class="inner">
-					<a href="{{ home_url }}"><img src="{% static 'img/Plutus_Loyalty_Logo_Alpha.png'%}" alt="" class="logo"></a>
-					<!--<a href="index.html" class="logo">Plutus</a>-->
-					<nav id="nav">
-						<a href="{{ home_url }}">Home</a>
-						<a href="{{ contact_url }}">Contact</a>
-						<a href="{{ product_list_url }}">Product</a>
-						<a class="nav-link" href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-					</nav>
-				</div>
-			</header>
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<!-- header begin -->
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo" style="padding-top:22px;">
+                                <a href="{{ home_url }}"><img src="{% static 'img/Plutus_Loyalty_Programme_Logo_Alpha.png'%}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="support">
+                                <ul>
+                                    <li>
+                                        <div class="lang-change-button">
+                                            <select>
+                                                <option>English</option>
+                                                <option>Bengali</option>
+                                                <option>Hindi</option>
+                                            </select>
+                                            <div class="icon">
+                                                <i class="icofont-world"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><span><i class="icofont-headphone"></i></span>Support</li>
+                                    <li><span><i class="icofont-email"></i></span>info@bizera.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-5 d-flex align-items-center offset-xl-4">
+                            <div class="user-area">
+                                <ul>
+                                    <li><span><i class="icofont-user-male"></i></span><a href="#">SignIn</a></li>
+                                    <li><a href="#">Join</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-xl-3 col-lg-3 d-xl-none d-lg-none d-block">
+                            <div class="mobile-style">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mobile-logo">
+                                            <a href="index.html"><img src="assets/img/1-logo.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center">
+                                        <div class="menu-button">
+                                            <button class="responsive-menu-button">
+                                                <i class="icofont-navigation-menu"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <ul>
+                                    <li><a href="{{ home_url }}">home</a></li>
+                                    <li><a href="about.html">about</a></li>
+                                    {% if request.user.is_authenticated %}
+                                    <li><a href="#">blog <i class="icofont-rounded-down"></i></a>
+                                        <ul>
+                                            <li><a href="{{ account_url }}">Home</a></li>
+                                            <li><a href="{{ account_url }}#billing">Billing</a></li>
+                                            <li><a href="{% url 'account:user-product-history' %}">History</a></li>
+                                            <li><a href="{{ logout_url }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a href="#">Account<i class="icofont-rounded-down"></i></a>
+                                        <ul>
+                                            <li><a href="{{ register_url }}">Register</a></li>
+                                            <li><a href="{{ login_url }}">Login</a></li>
+                                        </ul>
+                                    </li>
 
-
+                                    {% endif %}
+                                    <li><a href="{{ product_list_url }}">Products</a></li>
+                                    <li><a href="{{ contact_url }}">contact</a></li>
+                                    <li><a href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="icofont-cart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
 
 
 

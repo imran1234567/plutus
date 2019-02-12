@@ -1,72 +1,109 @@
-/*
-	Introspect by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
 
-(function($) {
+(function ($) {
+    "use strict";
 
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)'
+	$(document).ready(function(){
+		//======================================
+		//============== Accordian =============
+		//======================================
+		$('.collapse').on('shown.bs.collapse', function () {
+			$(this).prev().addClass('active');
+		});
+		$('.collapse').on('hidden.bs.collapse', function () {
+			$(this).prev().removeClass('active');
+		});
+
+		//=======================================
+		//==============  testimonial =========== 
+		//========================================
+		var testimonialCarousel = $('.testimonial-carousel');
+			testimonialCarousel.owlCarousel({
+			loop:true,
+			dots:true,
+			nav:false,
+			responsive : {
+				0 : {
+					items: 1
+				},
+				768 : {
+					items: 1
+				},
+				960 : {
+					items: 1
+				},
+				1200 : {
+					items: 1
+				},
+				1920 : {
+					items: 1
+				}
+			}
+		}); 
+
+
+		//========================================
+		//============  portfolio-slider ========= 
+		//========================================
+		var portfolioCarousel = $('.portfolio-slider');
+				portfolioCarousel.owlCarousel({
+				loop:true,
+				dots:false,
+				nav:true,
+				navText: ['<i class="icofont-rounded-left"></i>','<i class="icofont-rounded-right"></i>'],
+				responsive : {
+					0 : {
+						items: 1
+					},
+					768 : {
+						items: 1
+					},
+					960 : {
+						items: 1
+					},
+					1200 : {
+						items: 1
+					},
+					1920 : {
+						items: 1
+					}
+				}
+			}); 
+
+		$(function(){
+			$('.responsive-menu-button').on('click', function(){
+				$('.main-menu').toggle(300);
+			})
+		});
+
+
+		
+		$(function(){
+			
+			$(document).on('click', 'a[href="#choosing-reason"]', function(event) {
+				event.preventDefault();
+				var sHeight = $('#choosing-reason').offset().top;
+				$('html, body').animate({
+					scrollTop: sHeight
+				});
+			})
+
+		})
+
 	});
 
-	$(function() {
+	$(window).on('load',function(){
+		/*-----------------
+			preloader
+		------------------*/
+		var preLoder = $(".preloader");
+		preLoder.fadeOut(1000);
+	
+	}); 
 
-		var	$window = $(window),
-			$body = $('body');
+}(jQuery));
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
 
-		// Off-Canvas Navigation.
 
-			// Navigation Panel Toggle.
-				$('<a href="#navPanel" class="navPanelToggle"></a>')
-					.appendTo($body);
-
-			// Navigation Panel.
-				$(
-					'<div id="navPanel">' +
-						$('#nav').html() +
-						'<a href="#navPanel" class="close"></a>' +
-					'</div>'
-				)
-					.appendTo($body)
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left'
-					});
-
-			// Fix: Remove transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#navPanel')
-						.css('transition', 'none');
-
-	});
-
-})(jQuery);
