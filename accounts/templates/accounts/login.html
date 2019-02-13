@@ -1,10 +1,52 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Login</h1>
-    <form method='POST'> {% csrf_token %}
-      {{ form }}
-      <button type='submit' class='btn btn-default'>Submit</button>
-    </form>
+<div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="title-area">
+                            <h2>Login</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="contact-box">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="part-img"></div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="part-form">
+                                        <div class="section-title-area text-left">
+                                            <h5>Login to discover more</h5>
+                                            <!--<h2>How Can We Help?</h2>-->
+                                        </div>
+
+                                        <form class="contact-form1" method='POST'> {% csrf_token %}
+                                            {{ form }}
+                                            <button type="submit">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- map begin -->
+        <div id="map"></div>
+        <!-- map end -->
+<!--<h1>Login</h1>-->
+    <!--<form method='POST' class="contact-form"> {% csrf_token %}-->
+      <!--{{ form }}-->
+      <!--<button type='submit' class='btn btn-default'>Submit</button>-->
+    <!--</form>-->
 
 {% endblock %}

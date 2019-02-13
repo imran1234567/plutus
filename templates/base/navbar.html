@@ -39,14 +39,6 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-5 d-flex align-items-center offset-xl-4">
-                            <div class="user-area">
-                                <ul>
-                                    <li><span><i class="icofont-user-male"></i></span><a href="#">SignIn</a></li>
-                                    <li><a href="#">Join</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="mobile-logo">
-                                            <a href="index.html"><img src="assets/img/1-logo.png" alt=""></a>
+                                            <a href="{{ home_url }}"><img src="{% static 'img/Plutus_Loyalty_Programme_Logo_Alpha.png'%}" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex align-items-center">
@@ -76,6 +68,8 @@
                                 <ul>
                                     <li><a href="{{ home_url }}">home</a></li>
                                     <li><a href="about.html">about</a></li>
+                                    <li><a href="{{ product_list_url }}">Products</a></li>
+                                    <li><a href="{{ contact_url }}">contact</a></li>
                                     {% if request.user.is_authenticated %}
                                     <li><a href="#">blog <i class="icofont-rounded-down"></i></a>
                                         <ul>
@@ -95,8 +89,6 @@
                                     </li>
 
                                     {% endif %}
-                                    <li><a href="{{ product_list_url }}">Products</a></li>
-                                    <li><a href="{{ contact_url }}">contact</a></li>
                                     <li><a href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="icofont-cart"></i></a></li>
                                 </ul>
                             </div>
