@@ -1,15 +1,33 @@
-<div class="card" style="width: 20rem;">
-  {% if instance.image %}
-    <a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title}} logo"></a>
-    {% endif %}
-  <div class="card-body">
-    <h4 class="card-title">{{ instance.title }}</h4>
-    <p class="card-text">{{ instance.description|linebreaks|truncatewords:14 }}</p>
-    
-    <div class='text-center'>
-        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">View</a>
-        {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
-    </div>
-   <!--  <a href="{% url 'products:detail' slug=instance.slug  %}" class="btn btn-warning">URL shortcut</a> -->
-  </div>
-</div>
+
+        <!-- pricing-content end -->
+
+<div class="pricing-tbl-single text-center">
+                                <h4>{{ instance.title }}</h4>
+                              {% if instance.image %}
+                                <a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title}} logo"></a>
+                              {% endif %}
+                                <div class="price-amount">
+                                    <h1 style="font-size:24px;"><sup>Rs</sup>{{ instance.price }}</h1>
+                                </div>
+                                <ul>
+                                    <li>{{ instance.description|linebreaks|truncatewords:14 }}</li>
+                                    <li><a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">View</a></li>
+                                    <li>{% include 'products/snippets/update-cart.html' with product=instance cart=cart %}</li>
+                                </ul>
+                            </div>
+
+<!--<div class="card" style="width: 20rem;">-->
+  <!--{% if instance.image %}-->
+    <!--<a href="{{ instance.get_absolute_url }}"><img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title}} logo"></a>-->
+    <!--{% endif %}-->
+  <!--<div class="card-body">-->
+    <!--<h4 class="card-title">{{ instance.title }}</h4>-->
+    <!--<p class="card-text">{{ instance.description|linebreaks|truncatewords:14 }}</p>-->
+    <!---->
+    <!--<div class='text-center'>-->
+        <!--<a href="{{ instance.get_absolute_url }}" class="btn btn-primary my-2">View</a>-->
+        <!--{% include 'products/snippets/update-cart.html' with product=instance cart=cart %}-->
+    <!--</div>-->
+   <!--&lt;!&ndash;  <a href="{% url 'products:detail' slug=instance.slug  %}" class="btn btn-warning">URL shortcut</a> &ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
