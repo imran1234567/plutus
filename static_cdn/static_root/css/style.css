@@ -259,8 +259,8 @@ body {
         banner
 =======================================*/
 .banner {
-    background: url('../img/banner.jpg') no-repeat bottom center;
-    background-size: cover;
+    background: url('../img/new_banner.jpg') no-repeat center right;
+    background-size: auto;
     position: relative;
 }
 .banner:after {

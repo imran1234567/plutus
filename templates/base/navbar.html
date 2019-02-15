@@ -67,7 +67,7 @@
                             <div class="main-menu">
                                 <ul>
                                     <li><a href="{{ home_url }}">home</a></li>
-                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="{% url 'about'%}">about</a></li>
                                     <li><a href="{{ product_list_url }}">Products</a></li>
                                     <li><a href="{{ contact_url }}">contact</a></li>
                                     {% if request.user.is_authenticated %}
