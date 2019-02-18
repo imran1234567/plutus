@@ -68,7 +68,7 @@
                                 <ul>
                                     <li><a href="{{ home_url }}">home</a></li>
                                     <li><a href="{% url 'about'%}">about</a></li>
-                                    <li><a href="{{ product_list_url }}">Products</a></li>
+                                    <li><a href="{{ product_list_url }}">Cards</a></li>
                                     <li><a href="{{ contact_url }}">contact</a></li>
                                     {% if request.user.is_authenticated %}
                                     <li><a href="#">Account <i class="icofont-rounded-down"></i></a>
@@ -81,12 +81,9 @@
                                     </li>
                                     {% else %}
                                     <li>
-                                        <a href="#">Account<i class="icofont-rounded-down"></i></a>
-                                        <ul>
-                                            <li><a href="{{ register_url }}">Register</a></li>
-                                            <li><a href="{{ login_url }}">Login</a></li>
-                                        </ul>
+                                        <a href="{{ register_url }}">Register</a>
                                     </li>
+                                    <li><a href="{{ login_url }}">Login</a></li>
 
                                     {% endif %}
                                     <li><a href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="icofont-cart"></i></a></li>
