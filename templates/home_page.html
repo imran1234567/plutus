@@ -10,22 +10,46 @@
 {% endblock %}
 
 {% block content %}
-<div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-8">
-                        <div class="banner-content">
-                            <h1><span>Plutus</span> Card Loyalty program</h1>
-                            <p>Every one of us desires best-in-class services at fair and discounted prices. But how!
-CFS Enterprises LLP understands your concern. To assist you in getting imperial services without hassles, it has brought to you an on-the-go convenience card to unlock your happiness and enjoy breath-taking discounts on multiple merchandize across India.
-So now, think Deals and Discounts? Think Plutus!
-</p>
-                            <a href="/register/">get started now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'img/1.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/2.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/3.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
 
 <!-- counter begin -->
@@ -35,7 +59,7 @@ So now, think Deals and Discounts? Think Plutus!
                     <div class="col-xl-4 col-lg-4 col-sm-4">
                         <div class="single-counter">
                             <div class="part-icon">
-                                <img src="assets/img/employee.svg" alt="">
+                                <img src="{% static 'img/employee.svg'%}" alt="">
                             </div>
                             <div class="part-text">
                                 <h2 class="number">20</h2>
@@ -47,7 +71,7 @@ So now, think Deals and Discounts? Think Plutus!
                     <div class="col-xl-4 col-lg-4 col-sm-4">
                         <div class="single-counter">
                             <div class="part-icon">
-                                <img src="assets/img/feedback.svg" alt="">
+                                <img src="{% static 'img/feedback.svg'%}" alt="">
                             </div>
                             <div class="part-text">
                                 <h2 class="number">50+</h2>
@@ -60,7 +84,7 @@ So now, think Deals and Discounts? Think Plutus!
                     <div class="col-xl-4 col-lg-4 col-sm-4">
                         <div class="single-counter">
                             <div class="part-icon">
-                                <img src="assets/img/trophy.svg" alt="">
+                                <img src="{% static 'img/trophy.svg'%}" alt="">
                             </div>
                             <div class="part-text">
                                 <h2 class="number">2</h2>
