@@ -64,7 +64,7 @@ def create_id():
     return str(1111)+str(now.year)+str(1000)+str(uuid4().int)[:4]
 
 class User(AbstractBaseUser):
-    id = models.CharField(primary_key=True, default=create_id, editable=True, max_length=200)
+    id = models.BigIntegerField(primary_key=True, default=create_id, editable=True, max_length=200)
     email       = models.EmailField(max_length=255, unique=True)
     full_name   = models.CharField(max_length=255, blank=True, null=True)
     is_active   = models.BooleanField(default=True) # can login 
