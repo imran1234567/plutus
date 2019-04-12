@@ -61,7 +61,7 @@ class UserManager(BaseUserManager):
 
 def create_id():
     now = datetime.datetime.now()
-    return str(1111)+" " + str(now.year)+" "+ str(1000)+" "+str(uuid4().int)[:4]
+    return str(1111)+str(now.year)+str(1000)+str(uuid4().int)[:4]
 
 class User(AbstractBaseUser):
     id = models.CharField(primary_key=True, default=create_id, editable=True, max_length=200)
