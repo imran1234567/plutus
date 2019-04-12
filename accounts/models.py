@@ -13,9 +13,14 @@ from django.template.loader import get_template
 from django.utils import timezone
 
 from ecommerce.utils import random_string_generator, unique_key_generator
+from uuid import uuid4
+import datetime
 #send_mail(subject, message, from_email, recipient_list, html_message)
 
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
+
+
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, full_name=None, password=None, is_active=True, is_staff=False, is_admin=False):
@@ -54,7 +59,12 @@ class UserManager(BaseUserManager):
         return user
 
 
+def create_id():
+    now = datetime.datetime.now()
+    return str(1111)+" " + str(now.year)+" "+ str(1000)+" "+str(uuid4().int)[:4]
+
 class User(AbstractBaseUser):
+    id = models.CharField(primary_key=True, default=create_id, editable=True, max_length=200)
     email       = models.EmailField(max_length=255, unique=True)
     full_name   = models.CharField(max_length=255, blank=True, null=True)
     is_active   = models.BooleanField(default=True) # can login 
