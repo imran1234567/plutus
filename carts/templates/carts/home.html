@@ -3,8 +3,7 @@
 
 {% block content %}
 <div class="container">
-  <div class="col-sm-6 col-sm-offset-3">
-    <h1>Cart</h1>
+  <h1>Cart</h1>
 
 {% if cart.products.exists %}
 <table class="table cart-table">
@@ -48,10 +47,8 @@
 
 {% else %}
 <p class='lead'>Cart is empty</p>
-  </div>
-</div>
 
 {% endif %}
-
+</div>
 
 {% endblock %}
