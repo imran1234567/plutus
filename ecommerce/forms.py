@@ -12,6 +12,15 @@ class ContactForm(forms.Form):
                     }
                     )
             )
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Your Phone Number"
+            }
+        )
+    )
+
     email    = forms.EmailField(
             widget=forms.EmailInput(
                     attrs={
